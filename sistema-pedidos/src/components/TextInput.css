@@ -1,0 +1,36 @@
+.input-group-brot {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group-brot input {
+    width: 100%;
+    padding: 1rem 0.75rem 0.25rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: transparent;
+    outline: none;
+    color: #333; /* o var(--brot-brown) si preferís */
+  }
+  
+  .input-group-brot label {
+    position: absolute;
+    top: 0.7rem;
+    left: 0.75rem;
+    color: #666;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  
+  .input-group-brot input:focus + label,
+  .input-group-brot input.filled + label {
+    top: -0.7rem;
+    left: 0.6rem;
+    font-size: 0.9rem;
+    background: #ffffff;
+    padding: 0 4px;
+    color: var(--brot-brown);
+  }
+  
