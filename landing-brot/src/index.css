@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* BROT Brand Colors - HSL Format */
+    --background: 26 24% 95%;
+    --foreground: 30 50% 20%;
+
+    --card: 26 24% 97%;
+    --card-foreground: 30 50% 20%;
+
+    --popover: 26 24% 97%;
+    --popover-foreground: 30 50% 20%;
+
+    /* Primary: Golden/Mustard from brand */
+    --primary: 42 65% 55%;
+    --primary-foreground: 26 24% 95%;
+
+    /* Secondary: Brown from brand */
+    --secondary: 30 50% 25%;
+    --secondary-foreground: 26 24% 95%;
+
+    /* Muted: Soft pink/beige from brand */
+    --muted: 340 25% 90%;
+    --muted-foreground: 30 30% 40%;
+
+    /* Accent: Deep brown from brand */
+    --accent: 30 60% 20%;
+    --accent-foreground: 26 24% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 340 20% 85%;
+    --input: 340 20% 85%;
+    --ring: 42 65% 55%;
+
+    /* Brand-specific tokens */
+    --brot-gold: 42 65% 55%;
+    --brot-gold-light: 45 70% 65%;
+    --brot-brown: 30 50% 25%;
+    --brot-brown-dark: 30 60% 20%;
+    --brot-pink: 340 25% 90%;
+    --brot-pink-accent: 340 45% 75%;
+    --brot-cream: 26 24% 95%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(var(--brot-gold)), hsl(var(--brot-gold-light)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--brot-cream)), hsl(var(--brot-pink)));
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 30% 12%;
+    --foreground: 26 40% 85%;
+
+    --card: 25 25% 15%;
+    --card-foreground: 26 40% 85%;
+
+    --popover: 25 25% 15%;
+    --popover-foreground: 26 40% 85%;
+
+    --primary: 42 65% 55%;
+    --primary-foreground: 25 30% 12%;
+
+    --secondary: 30 25% 20%;
+    --secondary-foreground: 26 40% 85%;
+
+    --muted: 30 20% 18%;
+    --muted-foreground: 26 25% 65%;
+
+    --accent: 42 65% 55%;
+    --accent-foreground: 25 30% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 20% 25%;
+    --input: 30 20% 25%;
+    --ring: 42 65% 55%;
+
+    /* Brand tokens for dark mode - improved contrast */
+    --brot-gold: 42 65% 55%;
+    --brot-gold-light: 45 70% 65%;
+    --brot-brown: 26 35% 70%;
+    --brot-brown-dark: 26 40% 85%;
+    --brot-pink: 340 25% 25%;
+    --brot-pink-accent: 340 35% 35%;
+    --brot-cream: 26 15% 18%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(var(--brot-gold)), hsl(var(--brot-gold-light)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--brot-cream)), hsl(var(--brot-pink)));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .brot-gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--brot-gold)), hsl(var(--brot-gold-light)));
+  }
+
+  .brot-gradient-earth {
+    background: linear-gradient(180deg, hsl(var(--brot-cream)), hsl(var(--brot-pink)));
+  }
+
+  .wheat-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--brot-gold) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--brot-brown) / 0.05) 0%, transparent 50%);
+  }
+}
