@@ -1,0 +1,254 @@
+/* 🃏 ESTILOS DEL COMPONENTE CARD - BROT DESIGN SYSTEM */
+
+.brot-card {
+  /* Base */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--neutral-200));
+  transition: all var(--transition-normal);
+  
+  /* Typography */
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+/* 🎨 VARIANTES */
+
+.brot-card--default {
+  background: var(--surface);
+}
+
+.brot-card--gold {
+  background: var(--gradient-warm);
+  color: hsl(var(--brot-cream));
+  border-color: hsl(var(--brot-gold));
+}
+
+.brot-card--brown {
+  background: var(--gradient-brown);
+  color: hsl(var(--brot-cream));
+  border-color: hsl(var(--brot-brown));
+}
+
+.brot-card--cream {
+  background: hsl(var(--brot-cream));
+  border-color: hsl(var(--brot-gold) / 0.3);
+}
+
+.brot-card--pink {
+  background: hsl(var(--brot-pink));
+  border-color: hsl(var(--brot-pink-accent));
+}
+
+.brot-card--outlined {
+  background: transparent;
+  border: 2px solid hsl(var(--brot-gold));
+}
+
+/* 🌊 SOMBRAS */
+
+.brot-card--shadow-none {
+  box-shadow: none;
+}
+
+.brot-card--shadow-small {
+  box-shadow: var(--shadow-sm);
+}
+
+.brot-card--shadow-medium {
+  box-shadow: var(--shadow-md);
+}
+
+.brot-card--shadow-large {
+  box-shadow: var(--shadow-lg);
+}
+
+.brot-card--shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* 📏 PADDING */
+
+.brot-card--padding-none {
+  padding: 0;
+}
+
+.brot-card--padding-small {
+  padding: var(--space-md);
+}
+
+.brot-card--padding-medium {
+  padding: var(--space-lg);
+}
+
+.brot-card--padding-large {
+  padding: var(--space-xl);
+}
+
+/* ✨ EFECTOS HOVER */
+
+.brot-card--hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+  border-color: hsl(var(--brot-gold) / 0.5);
+}
+
+.brot-card--clickable {
+  cursor: pointer;
+  border: none;
+  text-align: left;
+}
+
+.brot-card--clickable:focus-visible {
+  outline: 2px solid hsl(var(--brot-gold));
+  outline-offset: 2px;
+}
+
+.brot-card--clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.brot-card--clickable:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* 📱 COMPONENTES INTERNOS */
+
+.brot-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.brot-card__title {
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: inherit;
+}
+
+.brot-card__title--small {
+  font-size: 1rem;
+}
+
+.brot-card__title--medium {
+  font-size: 1.25rem;
+}
+
+.brot-card__title--large {
+  font-size: 1.5rem;
+}
+
+.brot-card__content {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.brot-card__content > * + * {
+  margin-top: var(--space-sm);
+}
+
+.brot-card__footer {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid hsl(var(--neutral-200) / 0.5);
+}
+
+.brot-card__footer--left {
+  justify-content: flex-start;
+}
+
+.brot-card__footer--center {
+  justify-content: center;
+}
+
+.brot-card__footer--right {
+  justify-content: flex-end;
+}
+
+.brot-card__footer--between {
+  justify-content: space-between;
+}
+
+/* 🎯 CASOS ESPECIALES PARA EL SISTEMA DE PEDIDOS */
+
+.brot-card--pedido {
+  border-left: 4px solid hsl(var(--brot-gold));
+  background: hsl(var(--brot-cream) / 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.brot-card--pedido-urgente {
+  border-left: 4px solid hsl(var(--error));
+  animation: pulse-urgent 2s infinite;
+}
+
+.brot-card--pedido-completado {
+  border-left: 4px solid hsl(var(--success));
+  opacity: 0.8;
+}
+
+.brot-card--producto {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: white;
+}
+
+.brot-card--producto:hover {
+  box-shadow: var(--shadow-xl), 0 0 0 1px hsl(var(--brot-gold) / 0.2);
+}
+
+/* Tarjetas de estadísticas */
+.brot-card--stat {
+  text-align: center;
+  background: var(--gradient-earth);
+  border: none;
+}
+
+.brot-card--stat .brot-card__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(var(--brot-brown-dark));
+}
+
+/* ⚡ ANIMACIONES */
+
+@keyframes pulse-urgent {
+  0%, 100% {
+    border-left-color: hsl(var(--error));
+  }
+  50% {
+    border-left-color: hsl(var(--error) / 0.6);
+  }
+}
+
+/* 📱 RESPONSIVE */
+
+@media (max-width: 768px) {
+  .brot-card--padding-large {
+    padding: var(--space-lg);
+  }
+  
+  .brot-card--padding-medium {
+    padding: var(--space-md);
+  }
+  
+  .brot-card__footer {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .brot-card__footer--right,
+  .brot-card__footer--left,
+  .brot-card__footer--center {
+    justify-content: stretch;
+  }
+}
