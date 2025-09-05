@@ -1,0 +1,25 @@
+.brot-buttongroup {
+  display: flex;
+ 
+}
+
+.brot-btn {
+  background: var(--brot-gold-light);
+  color: var(--brot-brown-dark);
+  padding: 0.4rem 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+}
+
+.brot-btn.selected {
+  background: var(--brot-brown);
+  color: var(--brot-gold-light);
+}
+
+.brot-btn:hover:not(.selected) {
+  background: var(--brot-gold);
+  color: var(--brot-white);
+} 
