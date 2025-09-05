@@ -1,0 +1,306 @@
+/* 🧭 ESTILOS DEL NAVBAR - BROT DESIGN SYSTEM */
+
+.brot-navbar {
+  /* Base */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+  /* Fondo y blur */
+  background: var(--gradient-earth);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid hsl(var(--brot-gold) / 0.2);
+  
+  /* Transición suave */
+  transition: all var(--transition-normal);
+  
+  /* Sombra sutil */
+  box-shadow: var(--shadow-sm);
+}
+
+.brot-navbar--transparent {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+}
+
+.brot-navbar--scrolled {
+  background: hsl(var(--brot-cream) / 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-md);
+}
+
+.brot-navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  min-height: 4rem;
+}
+
+/* 🎨 BRAND Y LOGO */
+
+.brot-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.brot-navbar__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle {
+  width: 3rem;
+  height: 3rem;
+  background: var(--gradient-warm);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid hsl(var(--brot-brown) / 0.1);
+}
+
+.logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--brot-cream));
+  letter-spacing: 0.1em;
+}
+
+.brot-navbar__brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.brot-navbar__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--brot-brown-dark));
+  margin: 0;
+  line-height: 1.2;
+}
+
+.brot-navbar__subtitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(var(--brot-brown));
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 👤 INFORMACIÓN DEL USUARIO */
+
+.brot-navbar__user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.brot-navbar__greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.greeting-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(var(--brot-brown));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.user-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--brot-brown-dark));
+  letter-spacing: 0.025em;
+}
+
+.brot-navbar__date {
+  font-size: 0.625rem;
+  font-weight: 400;
+  color: hsl(var(--text-muted));
+  text-transform: capitalize;
+}
+
+/* ⚡ ACCIONES */
+
+.brot-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.brot-navbar__menu-toggle {
+  display: none;
+}
+
+.brot-navbar__logout {
+  white-space: nowrap;
+}
+
+/* 📱 MOBILE MENU */
+
+.brot-navbar__mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: hsl(var(--brot-cream) / 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid hsl(var(--brot-gold) / 0.2);
+  box-shadow: var(--shadow-lg);
+  
+  /* Animación de entrada */
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-menu-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.mobile-user-info {
+  text-align: center;
+  padding: var(--space-md);
+  background: hsl(var(--brot-pink) / 0.5);
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--brot-gold) / 0.2);
+}
+
+.mobile-greeting {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--brot-brown-dark));
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.mobile-date {
+  font-size: 0.75rem;
+  color: hsl(var(--text-muted));
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* ⚡ ANIMACIONES */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎯 ESTADOS ESPECIALES */
+
+.brot-navbar--transparent .logo-circle {
+  background: hsl(var(--brot-cream) / 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.brot-navbar--transparent .logo-text {
+  color: hsl(var(--brot-brown-dark));
+}
+
+.brot-navbar--transparent .brot-navbar__title,
+.brot-navbar--transparent .user-name {
+  color: hsl(var(--brot-cream));
+  text-shadow: 1px 1px 2px hsl(var(--brot-brown) / 0.3);
+}
+
+.brot-navbar--transparent .greeting-text,
+.brot-navbar--transparent .brot-navbar__subtitle {
+  color: hsl(var(--brot-cream) / 0.9);
+  text-shadow: 1px 1px 2px hsl(var(--brot-brown) / 0.3);
+}
+
+.brot-navbar--transparent .brot-navbar__date {
+  color: hsl(var(--brot-cream) / 0.8);
+  text-shadow: 1px 1px 2px hsl(var(--brot-brown) / 0.3);
+}
+
+/* 📱 RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .brot-navbar__container {
+    padding: var(--space-md);
+  }
+  
+  .brot-navbar__brand {
+    gap: var(--space-md);
+  }
+  
+  .brot-navbar__user-info {
+    display: none;
+  }
+  
+  .brot-navbar__menu-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .brot-navbar__container {
+    padding: var(--space-sm) var(--space-md);
+    min-height: 3.5rem;
+  }
+  
+  .logo-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .logo-text {
+    font-size: 0.875rem;
+  }
+  
+  .brot-navbar__title {
+    font-size: 1.125rem;
+  }
+  
+  .brot-navbar__subtitle {
+    font-size: 0.625rem;
+  }
+  
+  .brot-navbar__brand-info {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .brot-navbar__actions {
+    gap: var(--space-xs);
+  }
+  
+  .mobile-menu-content {
+    padding: var(--space-md);
+  }
+}
