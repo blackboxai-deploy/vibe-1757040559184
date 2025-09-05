@@ -1,0 +1,332 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 4px solid black;
+  border-radius: 9rem;
+  margin: 0 5rem;
+  background-color: var(--brot-gold);
+}
+
+.pedido-box {
+  background-color: var(--brot-gold);
+  max-width: 1000px;
+  box-sizing: border-box;
+  border-radius: 1.5rem; /* antes 100% */
+  margin: 0 auto;
+}
+
+.pedido-titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--brot-brown);
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin: 0rem 0 1rem 0;
+  padding: 0.5rem;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+  font-size: 1.2rem;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.unidades {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-block {
+  display: flex;
+  gap: 0.5rem
+}
+
+.input-block label {
+  min-width: auto;
+  font-weight: bold;
+  color: var(--brot-brown);
+}
+
+/* Estilo base para react-select */
+.input-clientes {
+  flex: 1;
+  bottom: 0.3rem;
+}
+
+/* Estilo visual similar a los inputs del proyecto */
+.input-clientes .react-select__control {
+  border: 2px solid black;
+  border-radius: 7px;
+  font-size: 1rem;
+  box-shadow: none;
+  background-color: white;
+}
+
+.input-clientes .react-select__indicator-separator {
+  display: none;
+}
+
+.input-clientes .react-select__menu {
+  margin-top: 0px !important;
+  border: 2px solid black;
+  z-index: 10;
+}
+
+.input-clientes .react-select__option {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.input-clientes .react-select__option--is-focused {
+  background-color: var(--brot-pink-light);
+}
+
+.input-sang .react-select__control {
+  border: 2px solid black;
+  border-radius: 7px;
+  font-size: 1rem;
+  box-shadow: none;
+  background-color: white;
+}
+.input-sang .react-select__indicator-separator {
+  display: none;
+}
+.input-sang .react-select__menu {
+  margin-top: 0px !important;
+  border: 2px solid black;
+  z-index: 10;
+}
+
+.input-sang .react-select__option {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.input-sang .react-select__option--is-focused {
+  background-color: var(--brot-pink-light);
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-row label {
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.input-fecha {
+  width: auto;
+  max-width: 1000px;
+  padding: 0.5rem;
+  padding-right: 3.5rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 7px;
+  background-color: white;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0rem;
+}
+
+input[type="number"] {
+  margin-top: 1rem;
+}
+
+.btn-form {
+  border: 2px solid var(--brot-brown);
+  background-color: var(--brot-brown);
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-form:hover {
+  transform: scale(1.05);
+  background-color: var(--brot-brown-dark);
+  color: white;
+}
+
+.resumen {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.bloque {
+  flex: 1;
+  border: 2px solid black;
+  padding: 1rem;
+  background-color: white;
+}
+
+.columna-formulario {
+  flex: 1;
+  display: flex;
+  flex-direction: column;  
+  min-width: 400px;
+  padding: .5rem;
+}
+.cont-conteiner{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.input-cantidad{
+  width: 100%;
+  padding: 0.4rem;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.columna-lista {
+  flex: 1;
+  background-color: white;
+  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  min-width: 450px;
+  max-height: 300px;
+  width: 80%;
+  overflow-y: auto;
+  margin-bottom: .5rem;
+}
+
+.btn-editar {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  background-color: lightblue;
+  color: white;
+  padding: 0.3rem 0.3rem;
+  border-radius: 4px;
+}
+
+.producto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--brot-brown);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: var(--brot-gold);
+}
+
+.producto-item-editando {
+  background-color: lightblue !important;
+  border: 2px solid #0066cc;
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+  padding: .7rem;
+}
+
+.producto-nombre {
+  font-weight: bold;
+  flex: 1;
+}
+
+.btn-detalle,
+.btn-eliminar {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--brot-brown);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.btn-eliminar {
+  background-color: var(--brot-red-dark);
+}
+
+.btn-form.activo {
+  outline: 2px solid white;
+  background-color: var(--brot-brown-light);
+}
+
+.nuevo-cliente-form {
+  margin-bottom: 1rem;
+  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--brot-pink-light);
+}
+
+.nuevo-cliente-form .input-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.nuevo-cliente-form label {
+  min-width: 100px;
+  font-weight: bold;
+  color: var(--brot-brown);
+}
+
+.nuevo-cliente-form input {
+  flex: 1;
+  padding: 0.4rem;
+  border: 2px solid black;
+  border-radius: 6px;
+}
+.botones-inferiores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.bi-plus{
+  font-size: 1rem;
+  
+}
+
+
+
+
+
