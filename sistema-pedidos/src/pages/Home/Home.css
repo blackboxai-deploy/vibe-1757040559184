@@ -1,0 +1,120 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--brot-pink);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.grid-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: 1rem;
+
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 4px solid black;
+  border-radius: 9rem;
+  margin: 0 5rem;
+  background-color: var(--brot-gold);
+}
+
+.action-btn {
+  background-color: var(--brot-brown);
+  color: var(--brot-white);
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.2s;
+  text-transform: uppercase;
+  width: 500px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.action-btn:hover {
+  background-color: var(--brot-brown-light);
+  transform: scale(1.05);
+}
+
+.bi-cart-plus{
+  font-size: 3rem;
+  margin-right: 0rem;
+  
+}
+
+
+/* 🔽 MEDIA QUERIES 🔽 */
+
+/* Tablets (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .grid-actions {
+    padding: 1.5rem;
+    margin: 0 2rem;
+    border-radius: 4rem;
+  }
+
+  .action-btn {
+    font-size: 2rem;
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem 2rem;
+  }
+
+  .bi-cart-plus {
+    font-size: 2.5rem;
+  }
+}
+
+/* Smartphones (≤ 768px) */
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .grid-actions {
+    padding: 1rem;
+    margin: 0 1rem;
+    gap: 2rem;
+    border-radius: 3rem;
+  }
+
+  .action-btn {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .bi-cart-plus {
+    font-size: 2rem;
+  }
+}
+
+/* Teléfonos pequeños (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .action-btn {
+    font-size: 1.3rem;
+    padding: 0.6rem 1rem;
+    border-radius: 2rem;
+  }
+
+  .bi-cart-plus {
+    font-size: 1.8rem;
+  }
+
+  .grid-actions {
+    border-width: 2px;
+  }
+}
