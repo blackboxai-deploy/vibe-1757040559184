@@ -1,0 +1,212 @@
+/* 🎨 BROT - Sistema de Diseño Global */
+/* Migración completa de la paleta visual de la landing page */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* 🎨 PALETA PRINCIPAL - HSL (extraída de la landing) */
+  --brot-gold: 42 65% 55%;          /* #d4a853 - Color primario */
+  --brot-gold-light: 45 70% 65%;    /* #e8c875 - Hover states */
+  --brot-gold-dark: 40 60% 45%;     /* #b3872f - Active states */
+  
+  --brot-brown: 30 50% 25%;         /* #56371d - Secundario */
+  --brot-brown-light: 30 45% 35%;   /* #7b5638 - Hover brown */
+  --brot-brown-dark: 30 60% 20%;    /* #3b240f - Texto importante */
+  
+  --brot-pink: 340 25% 90%;         /* #f9dddf - Fondo suave */
+  --brot-pink-accent: 340 35% 85%;  /* #f0c4c7 - Acentos rosados */
+  --brot-cream: 26 24% 95%;         /* #f5f1ea - Fondo principal */
+  
+  /* 🔲 NEUTROS Y GRISES */
+  --neutral-50: 0 0% 98%;
+  --neutral-100: 0 0% 96%;
+  --neutral-200: 0 0% 90%;
+  --neutral-300: 0 0% 83%;
+  --neutral-400: 0 0% 64%;
+  --neutral-500: 0 0% 45%;
+  --neutral-600: 0 0% 32%;
+  --neutral-700: 0 0% 25%;
+  --neutral-800: 0 0% 15%;
+  --neutral-900: 0 0% 9%;
+  
+  /* ⚠️ ESTADOS Y FEEDBACK */
+  --success: 120 100% 25%;
+  --warning: 38 92% 50%;
+  --error: 0 84% 60%;
+  --info: 217 91% 60%;
+  
+  /* 🎯 TOKENS DEL SISTEMA */
+  --background: var(--brot-cream);
+  --surface: hsl(var(--neutral-50));
+  --surface-hover: hsl(var(--neutral-100));
+  --text-primary: hsl(var(--brot-brown-dark));
+  --text-secondary: hsl(var(--brot-brown));
+  --text-muted: hsl(var(--neutral-600));
+  
+  /* 📏 ESPACIADO */
+  --space-xs: 0.25rem;    /* 4px */
+  --space-sm: 0.5rem;     /* 8px */
+  --space-md: 1rem;       /* 16px */
+  --space-lg: 1.5rem;     /* 24px */
+  --space-xl: 2rem;       /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4rem;      /* 64px */
+  
+  /* 🔄 BORDER RADIUS */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+  
+  /* 🌊 SOMBRAS */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* ⚡ TRANSICIONES */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* 🎨 GRADIENTES DE MARCA */
+  --gradient-warm: linear-gradient(135deg, hsl(var(--brot-gold)), hsl(var(--brot-gold-light)));
+  --gradient-earth: linear-gradient(180deg, hsl(var(--brot-cream)), hsl(var(--brot-pink)));
+  --gradient-brown: linear-gradient(135deg, hsl(var(--brot-brown)), hsl(var(--brot-brown-light)));
+}
+
+/* 🌗 MODO OSCURO (OPCIONAL) */
+[data-theme="dark"] {
+  --background: hsl(25 30% 12%);
+  --surface: hsl(25 25% 15%);
+  --surface-hover: hsl(25 25% 18%);
+  --text-primary: hsl(26 40% 85%);
+  --text-secondary: hsl(26 35% 70%);
+  --text-muted: hsl(var(--neutral-400));
+}
+
+/* 🏗️ RESET Y BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 📝 TIPOGRAFÍAS MEJORADAS */
+.text-display {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 🎨 CLASES UTILITARIAS DE MARCA */
+.bg-brot-gradient-warm {
+  background: var(--gradient-warm);
+}
+
+.bg-brot-gradient-earth {
+  background: var(--gradient-earth);
+}
+
+.bg-brot-gradient-brown {
+  background: var(--gradient-brown);
+}
+
+.text-brot-gold {
+  color: hsl(var(--brot-gold));
+}
+
+.text-brot-brown {
+  color: hsl(var(--brot-brown));
+}
+
+.border-brot-gold {
+  border-color: hsl(var(--brot-gold));
+}
+
+.shadow-brot {
+  box-shadow: var(--shadow-lg), 0 0 0 1px hsl(var(--brot-gold) / 0.1);
+}
+
+/* 🌾 PATRÓN DE TRIGO (DE LA LANDING) */
+.wheat-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 80%, hsl(var(--brot-gold) / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(var(--brot-brown) / 0.05) 0%, transparent 50%);
+}
+
+/* 🎯 FOCUS STATES GLOBALES */
+*:focus {
+  outline: 2px solid hsl(var(--brot-gold));
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* 📱 RESPONSIVE UTILITIES */
+@media (max-width: 768px) {
+  .text-display { font-size: 2.5rem; }
+  .text-h1 { font-size: 2rem; }
+  .text-h2 { font-size: 1.75rem; }
+}
