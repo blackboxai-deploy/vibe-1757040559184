@@ -1,0 +1,251 @@
+/* 🔘 ESTILOS DEL COMPONENTE BUTTON - BROT DESIGN SYSTEM */
+
+.brot-button {
+  /* Reset y base */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  
+  /* Typography */
+  font-family: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  /* Interacción */
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  outline: none;
+  
+  /* Transiciones */
+  transition: all var(--transition-normal);
+  
+  /* Estados base */
+  overflow: hidden;
+  
+  /* Focus visible */
+  &:focus-visible {
+    outline: 2px solid hsl(var(--brot-gold));
+    outline-offset: 2px;
+  }
+}
+
+/* 🎨 VARIANTES DE COLOR */
+
+/* PRIMARY - Dorado (Principal) */
+.brot-button--primary {
+  background: var(--gradient-warm);
+  color: hsl(var(--brot-cream));
+  box-shadow: var(--shadow-md);
+  
+  &:hover:not(:disabled) {
+    background: hsl(var(--brot-gold-light));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+  }
+  
+  &:active:not(:disabled) {
+    background: hsl(var(--brot-gold-dark));
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* SECONDARY - Marrón */
+.brot-button--secondary {
+  background: hsl(var(--brot-brown));
+  color: hsl(var(--brot-cream));
+  box-shadow: var(--shadow-md);
+  
+  &:hover:not(:disabled) {
+    background: hsl(var(--brot-brown-light));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+  }
+  
+  &:active:not(:disabled) {
+    background: hsl(var(--brot-brown-dark));
+    transform: translateY(0);
+  }
+}
+
+/* OUTLINE - Borde dorado */
+.brot-button--outline {
+  background: var(--surface);
+  color: hsl(var(--brot-brown));
+  border: 2px solid hsl(var(--brot-gold));
+  box-shadow: var(--shadow-sm);
+  
+  &:hover:not(:disabled) {
+    background: var(--gradient-warm);
+    color: hsl(var(--brot-cream));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+/* GHOST - Transparente */
+.brot-button--ghost {
+  background: transparent;
+  color: hsl(var(--brot-brown));
+  
+  &:hover:not(:disabled) {
+    background: hsl(var(--brot-pink));
+    color: hsl(var(--brot-brown-dark));
+  }
+  
+  &:active:not(:disabled) {
+    background: hsl(var(--brot-pink-accent));
+  }
+}
+
+/* DANGER - Rojo para acciones destructivas */
+.brot-button--danger {
+  background: hsl(var(--error));
+  color: white;
+  box-shadow: var(--shadow-md);
+  
+  &:hover:not(:disabled) {
+    background: hsl(0 84% 55%);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+  }
+  
+  &:active:not(:disabled) {
+    background: hsl(0 84% 50%);
+    transform: translateY(0);
+  }
+}
+
+/* 📏 TAMAÑOS */
+
+.brot-button--small {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+  border-radius: var(--radius-md);
+  min-height: 2rem;
+}
+
+.brot-button--medium {
+  padding: var(--space-md) var(--space-lg);
+  font-size: 1rem;
+  border-radius: var(--radius-lg);
+  min-height: 2.75rem;
+}
+
+.brot-button--large {
+  padding: var(--space-lg) var(--space-xl);
+  font-size: 1.125rem;
+  border-radius: var(--radius-xl);
+  min-height: 3.5rem;
+  font-weight: 600;
+}
+
+/* Botones extra grandes para acciones principales */
+.brot-button--xl {
+  padding: var(--space-xl) var(--space-3xl);
+  font-size: 1.25rem;
+  border-radius: var(--radius-2xl);
+  min-height: 4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* 🔄 ESTADOS ESPECIALES */
+
+.brot-button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.brot-button--loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.brot-button--full-width {
+  width: 100%;
+}
+
+/* 🎯 ICONOS */
+
+.brot-button__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brot-button__icon--left {
+  margin-left: calc(var(--space-xs) * -1);
+}
+
+.brot-button__icon--right {
+  margin-right: calc(var(--space-xs) * -1);
+}
+
+/* 🔄 LOADING SPINNER */
+
+.brot-button__spinner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brot-button__text--hidden {
+  opacity: 0;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 📱 RESPONSIVE */
+
+@media (max-width: 768px) {
+  .brot-button--large {
+    padding: var(--space-md) var(--space-lg);
+    font-size: 1rem;
+    min-height: 3rem;
+  }
+  
+  .brot-button--xl {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: 1.125rem;
+    min-height: 3.5rem;
+  }
+}
+
+/* ✨ ANIMACIONES ESPECIALES PARA EL SISTEMA DE PEDIDOS */
+
+.brot-button--pulse {
+  animation: pulse-button 2s infinite;
+}
+
+@keyframes pulse-button {
+  0%, 100% {
+    box-shadow: var(--shadow-md);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 0 4px hsl(var(--brot-gold) / 0.2);
+  }
+}
