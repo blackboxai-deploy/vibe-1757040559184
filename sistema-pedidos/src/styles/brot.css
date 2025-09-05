@@ -1,0 +1,33 @@
+:root {
+  /* Colores principales */
+  --brot-gold: #d1a24a;
+  --brot-brown: #56371d;
+  --brot-pink: #f9dddf;
+  --brot-red: #ba385a;
+
+  /* Variaciones GOLD */
+  --brot-gold-light: #e8c875;
+  --brot-gold-dark: #b3872f;
+
+  /* Variaciones BROWN */
+  --brot-brown-light: #7b5638;
+  --brot-brown-dark: #3b240f;
+
+  /* Variaciones PINK */
+  --brot-pink-light: #fceeee;
+  --brot-pink-dark: #e6bebe;
+
+  /* Variaciones RED */
+  --brot-red-light: #e86b87;
+  --brot-red-dark: #992c49;
+
+  /* Extras opcionales */
+  --brot-white: #ffffff;
+  --brot-black: #1c1c1c;
+}
+
+  body {
+    background-color: var(--brot-pink);
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+  
